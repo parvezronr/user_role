@@ -18,12 +18,14 @@
     <li><%= link_to 'Create A role', new_role_path %></li>
 	  <li><%= link_to 'Hide Role',hiderole_index_path %></li>
 	  <li><%= link_to 'Create User', new_user_path %></li>
-    <li><%= link_to 'Show Users' hiderole_index_path %></li>
+    <li><%= link_to 'Show Users', users_path, :remote => true%></li>
 
     </ul>
   </div>
 </nav>
+<div id="data" %>
 <%= yield %>
+</div>
 
 </body>
 </html>

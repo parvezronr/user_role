@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'hiderole/index'
   post 'hiderole/index'
   post 'users/user_list'
+  get 'users/user_list'
 
 
   resources :users

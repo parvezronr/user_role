@@ -1,14 +1,17 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  #respond_to :html, :js
 
   # GET /users
   # GET /users.json
   def index
-    @users = User.order("id DESC").all
-  end
+    @users = User.paginate(:per_page => 3,:page => params[:page])
 
-  def user_list
-    @users = User.order("id DESC").all
+    
+    respond_to do |format|
+    format.html
+    format.js
+  end
   end
 
   # GET /users/1
